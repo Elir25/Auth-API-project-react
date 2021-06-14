@@ -4,17 +4,17 @@ function Login() {
 
     return (
       <div>
-        <h1 className="h1">Login page</h1>
+        {/* <h1 className="h1">Login page</h1> */}
         <div className="form-div">
-          <h2>Login</h2>
+          <h1>Login</h1>
             <form >
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <input type="text" 
                 placeholder="Email" 
                 className="form-control"
                 name="email" /*ref={register}*//><br></br>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <input type="password" 
                 placeholder="Password"
                 className="form-control" 

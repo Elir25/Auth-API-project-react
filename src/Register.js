@@ -2,53 +2,41 @@ import React, { useState } from "react";
 // import useForm from "react-hook-form";
 
 function Register() {
+   const [name, setName] = useState()
+   const [email, setEmail] = useState()
+   const [password, setPassword] = useState()
 
-  const [userdata, setUserdata] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
-
-  const handleInputChange = (event) => {
-    
-    setUserdata({
-      ...userdata,
-      [event.target.name] : event.target.value
+  function onSubmit() {
+    console.log({
+      name, 
+      email,
+      password
     })
   }
-  const sendData = (event) => {
-    event.preventDefault()
-    console.log('los datos son..' + userdata.name + userdata.email + userdata.password)
-  }
-  
     return (
       <div >
-        <h1 className="h1">Register page</h1>
         <div className="form-div">
-          <h2>Register with us</h2>
-            <form >
-                <div className="col-md-4">
+          <h1>Register with us</h1>
+            <form className="form-content">
+                <div className="col-md-5">
                 <input type="text" 
                 placeholder="Name" 
                 className="form-control"
-                onChange={handleInputChange}
-                name="name" /> <br></br>
+                value={name} onChange={e => setName(e.target.value)}/> <br></br>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <input type="text" 
                 placeholder="Email" 
                 className="form-control"
-                onChange={handleInputChange}
-                name="email" /><br></br>
+                value={email} onChange={e => setEmail(e.target.value)} /><br></br>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <input type="password" 
                 placeholder="Password"
                 className="form-control" 
-                onChange={handleInputChange}
-                name="password" /><br></br>
+                value={password} onChange={e => setPassword(e.target.value)} /><br></br>
               </div>
-                <input onSubmit={sendData} className="btn btn-primary" type="submit" />
+                <input onClick={onSubmit} className="btn btn-primary" type="submit" />
             </form>
             <p>Already have an account? Login</p>
             </div>
@@ -57,3 +45,4 @@ function Register() {
   }
   
   export default Register;
+//video min 2:51:17
